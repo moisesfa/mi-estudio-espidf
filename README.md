@@ -6,7 +6,7 @@ Repositorio de estudio de ESP-IDF con ESP32
 - [Internet-of-Things-with-ESP32](https://github.com/PacktPublishing/Internet-of-Things-with-ESP32)
 
 # Lista de Tareas 
-## 
+## Primera parte
 - [ ] GPIO
 - [ ] PWM
 - [ ] ADC
