@@ -7,7 +7,7 @@ Repositorio de estudio de ESP-IDF con ESP32
 
 # Lista de Tareas 
 ## [Peripherals API](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/index.html)
-- [ ] GPIO
+- [x] GPIO
 - [ ] PWM
 - [ ] ADC
 - [ ] ...
