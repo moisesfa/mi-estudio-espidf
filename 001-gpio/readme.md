@@ -7,5 +7,7 @@
 - [x] Gestión de puertos entradas y salidas 
 - [x] Interrupciones 
 - [x] Tareas y colas 
+- [x] Logs 
+
 
 

@@ -15,6 +15,7 @@
 #include "freertos/task.h"
 #include "freertos/queue.h"
 #include "driver/gpio.h"
+#include "esp_log.h"
 
 /**
  * Brief:
@@ -56,6 +57,7 @@
 #define ESP_INTR_FLAG_DEFAULT 0
 
 static QueueHandle_t gpio_evt_queue = NULL;
+static const char * TAG = "001_GPIO" ;
 
 static void IRAM_ATTR gpio_isr_handler(void* arg)
 {
@@ -68,7 +70,8 @@ static void gpio_task_example(void* arg)
     uint32_t io_num;
     for (;;) {
         if (xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)) {
-            printf("GPIO[%"PRIu32"] intr, val: %d\n", io_num, gpio_get_level(io_num));
+            //printf("GPIO[%"PRIu32"] intr, val: %d\n", io_num, gpio_get_level(io_num));
+            ESP_LOGI(TAG,"GPIO[%"PRIu32"] intr, val: %d\n", io_num, gpio_get_level(io_num) );
         }
     }
 }
@@ -122,7 +125,8 @@ void init_hw (void)
     //hook isr handler for specific gpio pin again
     //gpio_isr_handler_add(GPIO_INPUT_IO_0, gpio_isr_handler, (void*) GPIO_INPUT_IO_0);
 
-    printf("Minimum free heap size: %"PRIu32" bytes\n", esp_get_minimum_free_heap_size());
+    //printf("Minimum free heap size: %"PRIu32" bytes\n", esp_get_minimum_free_heap_size());
+    ESP_LOGW( TAG, "Minimum free heap size: %"PRIu32" bytes\n", esp_get_minimum_free_heap_size());
 
 
 }
@@ -133,7 +137,8 @@ void app_main(void)
     
     int cnt = 0;
     while (1) {
-        printf("cnt: %d\n", cnt++);
+        //printf("cnt: %d\n", cnt++);
+        ESP_LOGE(TAG, "cnt: %d\n", cnt++);
         vTaskDelay(1000 / portTICK_PERIOD_MS);
         // Una forma elegante de cambiar el estado del pin
         gpio_set_level(GPIO_OUTPUT_IO_0, cnt % 2);
