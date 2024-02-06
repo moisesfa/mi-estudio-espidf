@@ -9,6 +9,6 @@
 
 - [x] Gestión de puertos entradas y salidas de otra manera 
 - [x] Logs 
-- [ ] Timer en FreeRTOS
+- [x] Timer en FreeRTOS
 
 
