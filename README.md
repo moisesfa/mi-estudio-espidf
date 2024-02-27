@@ -10,5 +10,7 @@ Repositorio de estudio de ESP-IDF con ESP32
 ## [Peripherals API](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/index.html)
 - [x] GPIO
 - [x] PWM
-- [ ] ADC
-- [ ] ...
+- [x] ADC
+- [ ] Sensores 
+    - [ ] DHT11
+    
