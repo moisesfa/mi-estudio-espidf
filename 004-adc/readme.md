@@ -10,4 +10,3 @@
 
 - [x] Lo básico de adc.
 
-
