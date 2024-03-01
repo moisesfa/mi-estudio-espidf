@@ -11,6 +11,7 @@ Repositorio de estudio de ESP-IDF con ESP32
 - [x] GPIO
 - [x] PWM
 - [x] ADC
+- [x] TOUCH
 - [ ] Sensores 
     - [ ] DHT11
     
