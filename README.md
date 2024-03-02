@@ -14,4 +14,9 @@ Repositorio de estudio de ESP-IDF con ESP32
 - [x] TOUCH
 - [ ] Sensores 
     - [ ] DHT11
+    - [ ] DS18B20
+    - [ ] TSL2561
+    - [ ] BME280
+    
+
     
