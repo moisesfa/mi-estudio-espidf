@@ -15,7 +15,7 @@ Repositorio de estudio de ESP-IDF con ESP32
 - [ ] Sensores 
     - [x] DHT11
     - [x] DS18B20
-    - [ ] TSL2561
+    - [x] BH1750
     - [ ] BME280
 
 
