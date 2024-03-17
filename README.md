@@ -12,11 +12,14 @@ Repositorio de estudio de ESP-IDF con ESP32
 - [x] PWM
 - [x] ADC
 - [x] TOUCH
-- [ ] Sensores 
+- [x] Sensores 
     - [x] DHT11
     - [x] DS18B20
     - [x] BH1750
-    - [ ] BME280
+    - [x] BMP280
+- [ ] Display OLED
+- [ ] FREERTOS SENSOR + OLED  
+- 
 
 
     
