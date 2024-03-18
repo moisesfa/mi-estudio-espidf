@@ -17,9 +17,11 @@ Repositorio de estudio de ESP-IDF con ESP32
     - [x] DS18B20
     - [x] BH1750
     - [x] BMP280
-- [ ] Display OLED
-- [ ] FREERTOS SENSOR + OLED  
-- 
+- [x] Display OLED
+- [x] Display OLED + SENSOR + FREERTOS
+- [ ] FREERTOS 
+    - [ ] MUTEX 
+    - [ ] QUEUES  
 
 
     
