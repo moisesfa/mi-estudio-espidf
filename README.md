@@ -20,8 +20,11 @@ Repositorio de estudio de ESP-IDF con ESP32
 - [x] Display OLED
 - [x] Display OLED + SENSOR + FREERTOS
 - [ ] FREERTOS 
+    - [x] TAREAS
     - [x] MUTEX 
-    - [ ] QUEUES  
+    - [x] COLAS     
+    - [x] SEMAFOROS
+
 
 
     
