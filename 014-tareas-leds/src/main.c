@@ -9,9 +9,9 @@
 #define ledB 5
 #define STACK_SIZE 1024*2
 
-#define R_DELAY 1000
-#define G_DELAY 2000
-#define B_DELAY 4000
+#define R_DELAY 500
+#define G_DELAY 1000
+#define B_DELAY 100
 
 const char *TAG = "Tareas";
 
@@ -55,11 +55,16 @@ esp_err_t init_led()
 
 esp_err_t create_tasks(void)
 {
+    ESP_LOGI(TAG, "Number of Cores: %i", portNUM_PROCESSORS);
+    
     static uint8_t ucParameterToPass;
     TaskHandle_t xHandle = NULL;
-    xTaskCreate( vTaskLedR, "vTaskLedR", STACK_SIZE, &ucParameterToPass, 1, &xHandle );
-    xTaskCreate( vTaskLedG, "vTaskLedG", STACK_SIZE, &ucParameterToPass, 1, &xHandle );
-    xTaskCreate( vTaskLedB, "vTaskLedB", STACK_SIZE, &ucParameterToPass, 1, &xHandle );
+    //xTaskCreate( vTaskLedR, "vTaskLedR", STACK_SIZE, &ucParameterToPass, 1, &xHandle );
+    xTaskCreatePinnedToCore( vTaskLedR, "vTaskLedR", STACK_SIZE, &ucParameterToPass, 1, &xHandle, 0 );
+    //xTaskCreate( vTaskLedG, "vTaskLedG", STACK_SIZE, &ucParameterToPass, 1, &xHandle );
+    xTaskCreatePinnedToCore( vTaskLedG, "vTaskLedG", STACK_SIZE, &ucParameterToPass, 1, &xHandle, 1 );    
+    //xTaskCreate( vTaskLedB, "vTaskLedB", STACK_SIZE, &ucParameterToPass, 1, &xHandle );
+    xTaskCreatePinnedToCore( vTaskLedB, "vTaskLedB", STACK_SIZE, &ucParameterToPass, 1, &xHandle, tskNO_AFFINITY );
     
     return ESP_OK;
 }
