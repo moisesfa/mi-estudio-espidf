@@ -19,7 +19,7 @@ Repositorio de estudio de ESP-IDF con ESP32
     - [x] BMP280
 - [x] Display OLED
 - [x] Display OLED + SENSOR + FREERTOS
-- [ ] FREERTOS 
+- [x] FREERTOS 
     - [x] TAREAS
     - [x] MUTEX 
     - [x] COLAS     
