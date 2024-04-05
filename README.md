@@ -24,7 +24,10 @@ Repositorio de estudio de ESP-IDF con ESP32
     - [x] MUTEX 
     - [x] COLAS     
     - [x] SEMAFOROS
-
+- [x] Interrupciones
+- [x] Web Server
+- [x] LouPower 
+- [ ] Uart 
 
 
     
