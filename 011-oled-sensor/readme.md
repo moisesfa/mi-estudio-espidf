@@ -1,6 +1,6 @@
 # Estudio OLED mas sesnor DHT11
 
-[esp-idf-ssd1306](https://github.com/nopnop2002/esp-idf-ssd1306)
+Fuente de información: [esp-idf-ssd1306](https://github.com/nopnop2002/esp-idf-ssd1306)
 
 ## Temas estudiados
 

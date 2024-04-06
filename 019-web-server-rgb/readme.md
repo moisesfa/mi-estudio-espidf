@@ -1,6 +1,6 @@
 # Estudio Web Server con RGB
 
-[Web Server/ RGB control](https://www.youtube.com/watch?v=YlPXwCDcI1o&list=PL-Hb9zZP9qC65SpXHnTAO0-qV6x5JxCMJ&index=16)
+Fuente de información: [Web Server/ RGB control](https://www.youtube.com/watch?v=YlPXwCDcI1o&list=PL-Hb9zZP9qC65SpXHnTAO0-qV6x5JxCMJ&index=16)
 
 ## Temas estudiados
 

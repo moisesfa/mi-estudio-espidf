@@ -1,8 +1,8 @@
 # Estudio sensor DHT
 
-[ESP-IDF Components library](https://github.com/PacktPublishing/Internet-of-Things-with-ESP32/tree/main/common/esp-idf-lib)
+Fuente de información: [ESP-IDF Components library](https://github.com/PacktPublishing/Internet-of-Things-with-ESP32/tree/main/common/esp-idf-lib)
 
-[Developing IoT Projects with ESP32](https://github.com/PacktPublishing/Internet-of-Things-with-ESP32)
+Fuente de información: [Developing IoT Projects with ESP32](https://github.com/PacktPublishing/Internet-of-Things-with-ESP32)
 
 ## Temas estudiados
 

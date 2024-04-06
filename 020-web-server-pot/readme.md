@@ -1,6 +1,6 @@
 # Estudio Web Server con Potenciometros
 
-[ Web Server/ Sensores](https://www.youtube.com/watch?v=_pi8zm_43EQ&list=PL-Hb9zZP9qC65SpXHnTAO0-qV6x5JxCMJ&index=17)
+Fuente de información: [Web Server/ Sensores](https://www.youtube.com/watch?v=_pi8zm_43EQ&list=PL-Hb9zZP9qC65SpXHnTAO0-qV6x5JxCMJ&index=17)
 
 ## Temas estudiados
 

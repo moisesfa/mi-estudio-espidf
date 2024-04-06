@@ -1,6 +1,6 @@
 # Estudio FreeRTOS
 
-[Touchpad Example](https://github.com/PacktPublishing/Internet-of-Things-with-ESP32/tree/main/ch3/freertos_queue_ex)
+Fuente de información: [Touchpad Example](https://github.com/PacktPublishing/Internet-of-Things-with-ESP32/tree/main/ch3/freertos_queue_ex)
 
 ## Temas estudiados
 

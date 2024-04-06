@@ -1,6 +1,6 @@
 # Estudio sensor BMP280
 
-[ESP-IDF Components library](https://github.com/UncleRus/esp-idf-lib/tree/master/examples/bmp280/default)
+Fuente de información: [ESP-IDF Components library](https://github.com/UncleRus/esp-idf-lib/tree/master/examples/bmp280/default)
 
 ## Temas estudiados
 

@@ -1,6 +1,6 @@
 # Estudio para desarrollar aplicaciones de bajo consumo 
 
-[ Low Power](https://github.com/PacktPublishing/Internet-of-Things-with-ESP32/blob/main/ch4/lsleep_example/src/main.c)
+Fuente de información: [Low Power](https://github.com/PacktPublishing/Internet-of-Things-with-ESP32/blob/main/ch4/lsleep_example/src/main.c)
 
 ## Temas estudiados
 

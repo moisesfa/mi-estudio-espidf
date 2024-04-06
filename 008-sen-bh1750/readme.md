@@ -1,6 +1,6 @@
 # Estudio sensor bh1750
 
-[ESP-IDF Components library](https://github.com/UncleRus/esp-idf-lib/tree/master/examples/bh1750/default)
+Fuente de información: [ESP-IDF Components library](https://github.com/UncleRus/esp-idf-lib/tree/master/examples/bh1750/default)
 
 ## Temas estudiados
 

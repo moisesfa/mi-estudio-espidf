@@ -1,6 +1,6 @@
 # Estudio GPIO 
 
-[Example: GPIO](https://github.com/espressif/esp-idf/tree/b3f7e2c/examples/peripherals/gpio/generic_gpio)
+Fuente de información: [Example: GPIO](https://github.com/espressif/esp-idf/tree/b3f7e2c/examples/peripherals/gpio/generic_gpio)
 
 ## Temas estudiados
 

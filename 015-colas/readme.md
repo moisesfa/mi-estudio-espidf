@@ -1,6 +1,6 @@
 # Estudio FreeRTOS Colas
 
-[FreeRTOS Queues](https://www.youtube.com/watch?v=abwyjmfZ0mQ&list=PL-Hb9zZP9qC65SpXHnTAO0-qV6x5JxCMJ&index=12)
+Fuente de información: [FreeRTOS Queues](https://www.youtube.com/watch?v=abwyjmfZ0mQ&list=PL-Hb9zZP9qC65SpXHnTAO0-qV6x5JxCMJ&index=12)
 
 ## Temas estudiados
 
