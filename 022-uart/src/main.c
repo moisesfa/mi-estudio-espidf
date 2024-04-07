@@ -37,7 +37,7 @@ static void uart_task(void *pvParameters)
        // Imprimimos en consola lo recibido
        ESP_LOGI(TAG, "Data recibida: %s", data);
 
-       // Manejo de los leds dependiendo de lo recibido 
+       // Manejo de los leds dependiendo de lo recibido (No hay \n ni \r)
        for (size_t i = 0; i < len; i++)
        {
          char value = data[i];

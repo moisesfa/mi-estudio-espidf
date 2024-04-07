@@ -27,7 +27,8 @@ Repositorio de estudio de ESP-IDF con ESP32
 - [x] Interrupciones
 - [x] Web Server
 - [x] LouPower 
-- [ ] Uart 
+- [x] UART 
+- [ ] I2C
 
 
     
