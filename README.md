@@ -28,7 +28,8 @@ Repositorio de estudio de ESP-IDF con ESP32
 - [x] Web Server
 - [x] LouPower 
 - [x] UART 
-- [ ] I2C
+- [ ] Proyecto con multiples archivos y funciones.
+- [ ] I2C en profundidad
 
 
     
