@@ -2,7 +2,7 @@
 #ifndef sub_ui_h_
 #define sub_ui_h_
 
-#include "common.h"
+#include "../common/common.h"
 
 typedef void (*rotenc_changed_f)(void);
 
@@ -25,8 +25,8 @@ extern "C"
     void uisub_init(uisub_config_t);
     // void uisub_sleep(void);
     // void uisub_resume(void);
-    // void uisub_beep(int);
-    // void uisub_show(sensor_reading_t);
+    void uisub_beep(int);
+    void uisub_show(sensor_reading_t);
 }
 
 #endif

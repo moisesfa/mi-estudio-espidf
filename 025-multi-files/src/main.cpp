@@ -1,21 +1,27 @@
 #include "sub_ui.h"
+#include "sub_sen.h"
 
 #define ROTENC_CLK_PIN 19
 #define ROTENC_DT_PIN 18
 #define OLED_SDA 21
 #define OLED_SCL 22
-#define OLED_RST 15
+#define OLED_RST -1
+#define SENSOR_BUS_SDA 32
+#define SENSOR_BUS_SCL 33
 
-#define BUZZER_PIN 17
+#define BUZZER_PIN 14
 
 // https://github.com/nopnop2002/esp-idf-ssd1306
 
 static void init_subsystems(void);
 static void update_power_man(void);
+static void alarm(void);
 
 extern "C" void app_main(void) 
 {
     init_subsystems();
+    uisub_beep(2);
+    sesub_start();
 }
 
 static void update_power_man(void)
@@ -35,5 +41,21 @@ static void init_subsystems(void)
         .oled_rst = OLED_RST
     };
     uisub_init(ui_cfg);
+
+     sesub_config_t se_cfg = {
+        .sensor_sda = SENSOR_BUS_SDA,
+        .sensor_scl = SENSOR_BUS_SCL,
+        .temp_high = 30,
+        .temp_low = 10,
+        .new_sensor_reading = uisub_show,
+        .temp_alarm = alarm,
+    };
+    sesub_init(se_cfg);
+
+
 }
 
+static void alarm(void)
+{
+    uisub_beep(3);
+}

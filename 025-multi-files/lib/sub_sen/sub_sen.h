@@ -2,9 +2,10 @@
 #ifndef sub_sen_h_
 #define sub_sen_h_
 
-#include "common.h"
+#include "../common/common.h"
 
 typedef void (*sensor_reading_f)(sensor_reading_t);
+//typedef void (*sensor_reading_f)(void);
 typedef void (*temp_alarm_f)(void);
 
 typedef struct

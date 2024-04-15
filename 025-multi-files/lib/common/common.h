@@ -6,8 +6,7 @@ typedef struct {
     int temperature;
     int humidity;
     int pressure;
-    int light;
+    //int light;
 } sensor_reading_t;
-
 
 #endif

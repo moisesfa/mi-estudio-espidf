@@ -13,13 +13,22 @@
 #define DISP_MAX_X 127
 #define DISP_MAX_Y 63
 
+#define SHOW_TEMPERATURE 0
+#define SHOW_HUMIDITY 1
+#define SHOW_PRESSURE 2
+//#define SHOW_LUX 3
+
 SSD1306_t dev;
 
-static void rotenc_handler(void *arg);
 static int rotenc_pos = 0;
 static uisub_config_t config;
 static SemaphoreHandle_t disp_guard;
+static sensor_reading_t last_reading;
+
+
+static void rotenc_handler(void *arg);
 static void reset_display(void);
+static void beep(void *arg);
 
 void uisub_init(uisub_config_t c)
 {
@@ -60,6 +69,58 @@ void uisub_init(uisub_config_t c)
     
 }
 
+void uisub_beep(int cnt)
+{
+    xTaskCreate(beep, "beep", 3 * configMINIMAL_STACK_SIZE, (void *)cnt, 5, NULL);
+}
+
+void uisub_show(sensor_reading_t data)
+{
+    if (xSemaphoreTake(disp_guard, 0) == pdFALSE)
+    {
+        return;
+    }
+    reset_display();
+    //ssd1306_setFixedFont(ssd1306xled_font8x16);
+    char buff[10];
+    printf("Humi: %d%% Temp: %dC Pres: %d\n", data.humidity, data.temperature, data.pressure);
+
+    switch ((rotenc_pos / 4) % 4)
+    {
+    case SHOW_TEMPERATURE:
+        //ssd1306_printFixed(0, 5, "Temp", STYLE_NORMAL);
+        //ssd1306_setFixedFont(ssd1306xled_font6x8);
+        sprintf(buff, "%d", data.temperature);
+        
+        //ssd1306_printFixedN(48, 16, buff, STYLE_BOLD, 2);
+        break;
+    case SHOW_HUMIDITY:
+        //ssd1306_printFixed(0, 19, "Hum", STYLE_NORMAL);
+        //ssd1306_setFixedFont(ssd1306xled_font6x8);
+        sprintf(buff, "%d", data.humidity);
+        //ssd1306_printFixedN(48, 16, buff, STYLE_BOLD, 2);
+        break;
+    case SHOW_PRESSURE:
+        //ssd1306_printFixed(0, 33, "Pres", STYLE_NORMAL);
+        //ssd1306_setFixedFont(ssd1306xled_font6x8);
+        sprintf(buff, "%d", data.pressure);
+        //ssd1306_printFixedN(48, 16, buff, STYLE_BOLD, 2);
+        break;
+    //case SHOW_LUX:
+        //ssd1306_printFixed(0, 47, "Lux", STYLE_NORMAL);
+        //ssd1306_setFixedFont(ssd1306xled_font6x8);
+        //sprintf(buff, "%d", data.light);
+        //ssd1306_printFixedN(48, 16, buff, STYLE_BOLD, 2);
+        //break;
+
+    default:
+        break;
+    }
+
+    last_reading = data;
+
+    xSemaphoreGive(disp_guard);
+}
 
 static void rotenc_handler(void *arg)
 {
@@ -91,4 +152,16 @@ static void reset_display(void)
     _ssd1306_line(&dev,0, DISP_MAX_Y - 1, 0, 0, false);
     
     ssd1306_show_buffer(&dev);    
+}
+
+static void beep(void *arg)
+{
+    int cnt = 2 * (int)arg;
+    bool state = true;
+    for (int i = 0; i < cnt; ++i, state = !state)
+    {
+        gpio_set_level((gpio_num_t)config.buzzer_pin, state);
+        vTaskDelay(100 / portTICK_PERIOD_MS);
+    }
+    vTaskDelete(NULL);
 }
