@@ -81,38 +81,25 @@ void uisub_show(sensor_reading_t data)
         return;
     }
     reset_display();
-    //ssd1306_setFixedFont(ssd1306xled_font8x16);
+
     char buff[10];
     printf("Humi: %d%% Temp: %dC Pres: %d\n", data.humidity, data.temperature, data.pressure);
 
     switch ((rotenc_pos / 4) % 4)
     {
     case SHOW_TEMPERATURE:
-        //ssd1306_printFixed(0, 5, "Temp", STYLE_NORMAL);
-        //ssd1306_setFixedFont(ssd1306xled_font6x8);
-        sprintf(buff, "%d", data.temperature);
-        
-        //ssd1306_printFixedN(48, 16, buff, STYLE_BOLD, 2);
+        sprintf(buff, "T: %d", data.temperature);
+        ssd1306_display_text_x3(&dev, 3, buff, 10, false);
         break;
     case SHOW_HUMIDITY:
-        //ssd1306_printFixed(0, 19, "Hum", STYLE_NORMAL);
-        //ssd1306_setFixedFont(ssd1306xled_font6x8);
-        sprintf(buff, "%d", data.humidity);
-        //ssd1306_printFixedN(48, 16, buff, STYLE_BOLD, 2);
+        sprintf(buff, "H: %d", data.humidity);
+        ssd1306_display_text_x3(&dev, 3, buff, 10, false);
         break;
     case SHOW_PRESSURE:
-        //ssd1306_printFixed(0, 33, "Pres", STYLE_NORMAL);
-        //ssd1306_setFixedFont(ssd1306xled_font6x8);
-        sprintf(buff, "%d", data.pressure);
-        //ssd1306_printFixedN(48, 16, buff, STYLE_BOLD, 2);
+        sprintf(buff, "P: %d", data.pressure);
+        ssd1306_display_text_x3(&dev, 3, buff, 10, false);
         break;
-    //case SHOW_LUX:
-        //ssd1306_printFixed(0, 47, "Lux", STYLE_NORMAL);
-        //ssd1306_setFixedFont(ssd1306xled_font6x8);
-        //sprintf(buff, "%d", data.light);
-        //ssd1306_printFixedN(48, 16, buff, STYLE_BOLD, 2);
-        //break;
-
+        
     default:
         break;
     }
@@ -147,9 +134,9 @@ static void reset_display(void)
     ssd1306_clear_screen(&dev, false);
     
     _ssd1306_line(&dev,0, 0, DISP_MAX_X, 0, false);
-    _ssd1306_line(&dev,DISP_MAX_X, 1, DISP_MAX_X, DISP_MAX_Y, false);
+    //_ssd1306_line(&dev,DISP_MAX_X, 1, DISP_MAX_X, DISP_MAX_Y, false);
     _ssd1306_line(&dev,DISP_MAX_X - 1, DISP_MAX_Y, 0, DISP_MAX_Y, false);
-    _ssd1306_line(&dev,0, DISP_MAX_Y - 1, 0, 0, false);
+    //_ssd1306_line(&dev,0, DISP_MAX_Y - 1, 0, 0, false);
     
     ssd1306_show_buffer(&dev);    
 }
