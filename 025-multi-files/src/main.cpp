@@ -1,5 +1,6 @@
 #include "sub_ui.h"
 #include "sub_sen.h"
+#include "sub_pow.h"
 
 #define ROTENC_CLK_PIN 19
 #define ROTENC_DT_PIN 18
@@ -10,6 +11,8 @@
 #define SENSOR_BUS_SCL 33
 
 #define BUZZER_PIN 14
+#define PIR_MOTION_PIN 4
+
 
 // https://github.com/nopnop2002/esp-idf-ssd1306
 
@@ -22,11 +25,12 @@ extern "C" void app_main(void)
     init_subsystems();
     uisub_beep(2);
     sesub_start();
+    pmsub_start();
 }
 
 static void update_power_man(void)
 {
-    //pmsub_update(false);
+    pmsub_update(false);
 }
 
 static void init_subsystems(void)
@@ -51,6 +55,13 @@ static void init_subsystems(void)
         .temp_alarm = alarm,
     };
     sesub_init(se_cfg);
+
+    pmsub_config_t pm_cfg = {
+        .pir_pin = PIR_MOTION_PIN,
+        .before_sleep = uisub_sleep,
+        .after_wakeup = uisub_resume,
+    };
+    pmsub_init(pm_cfg);
 
 
 }

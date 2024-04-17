@@ -23,8 +23,8 @@ typedef struct
 extern "C"
 {
     void uisub_init(uisub_config_t);
-    // void uisub_sleep(void);
-    // void uisub_resume(void);
+    void uisub_sleep(void);
+    void uisub_resume(void);
     void uisub_beep(int);
     void uisub_show(sensor_reading_t);
 }

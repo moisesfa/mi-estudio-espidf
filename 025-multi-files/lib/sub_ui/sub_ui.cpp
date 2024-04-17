@@ -82,7 +82,7 @@ void uisub_show(sensor_reading_t data)
     }
     reset_display();
 
-    char buff[10];
+    char buff[10];    
     printf("Humi: %d%% Temp: %dC Pres: %d\n", data.humidity, data.temperature, data.pressure);
 
     switch ((rotenc_pos / 4) % 4)
@@ -121,9 +121,8 @@ static void rotenc_handler(void *arg)
             if (config.rotenc_changed != NULL)
             {
                 config.rotenc_changed();
-            }
-            // TODO:
-            //uisub_show(last_reading);
+            }            
+            uisub_show(last_reading);
         }
         vTaskSuspend(NULL);
     }
@@ -151,4 +150,14 @@ static void beep(void *arg)
         vTaskDelay(100 / portTICK_PERIOD_MS);
     }
     vTaskDelete(NULL);
+}
+
+void uisub_sleep(void)
+{
+    ssd1306_clear_screen(&dev, false);    
+}
+
+void uisub_resume(void)
+{
+    reset_display();
 }
